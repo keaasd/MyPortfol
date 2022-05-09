@@ -58,7 +58,9 @@ $r_desk_1360: 1360px;
 h1 {
   font-size: var(--text-size-mini);
 }
-
+html {
+scroll-behavior: smooth;
+}
 body {
   font-size: 62.5%;
   /* 16px*0.62.5% = 10px */
@@ -360,7 +362,7 @@ li {
 .nav_mail {
   position: relative;
 
-  @media (max-width: $r_tab) {
+  @media (max-width: 896px) {
     display: none;
 
     &_menu {
@@ -851,7 +853,6 @@ li {
     display: flex;
     // padding: 20px;
   }
-
   &-body {
     padding: 55px 20px 40px;
     background-color: $white-g;
@@ -861,6 +862,10 @@ li {
     position: relative;
     margin: auto;
     max-width: 600px;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
 
     @media (max-width: $r_mob_567) {
       padding: 60px 10px;
@@ -872,6 +877,9 @@ li {
     top: 20px;
     right: 20px;
     cursor: pointer;
+    & svg {
+      fill: $bla1;
+    }
 
     @media (max-width: $r_mob_567) {
       top: 10px;
@@ -2457,6 +2465,9 @@ Select c dropdown на JS
     border-top: 1px solid rgba(243, 242, 240, .2);
 
   }
+  & .modal-close svg {
+    fill: $white;
+  }
 
   & .modal__link:last-child {
     border-top: 1px solid rgba(243, 242, 240, .2);
@@ -2482,6 +2493,7 @@ Select c dropdown на JS
   & .advantage__image svg {
     fill: white;
   }
+  
 & .modal-body {
 background-color: $bla1;
 }

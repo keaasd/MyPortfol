@@ -1,48 +1,23 @@
 import 'normalize.css'
 import 'swiper/css';
-import Icon from './images/css.svg';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './styles/main.scss';
-import $ from 'jquery';
+// import $ from 'jquery';
+import './js/croll.js';
+import './js/fix-header.js';
 import './js/select.js';
 import './js/btn-up';
 import Swiper, { Navigation, Pagination } from 'swiper';
+// import smoothscroll from 'smoothscroll-polyfill';
+// import * as smoothscroll from 'smoothscroll-polyfill';
+// smoothscroll.polyfill();
 
-  // Add the image to our existing div.
-  const myIcon = new Image();
-  myIcon.src = Icon; 
-
- document.body.appendChild(component());
 
 const theme = document.querySelector('.theme');
 theme.addEventListener('click', () => {  
   body.classList.toggle("black_th");
 });
-// scroll 
-const header = document.querySelector('.header');
-const page = document.querySelector('main');
-
-
-window.addEventListener('wheel', function(evt) {
-  if(evt.deltaY < 0) {
-    //  console.log('поймали: ');
-    header.classList.add('fix-header')
-    page.style.marginTop = header.clientHeight + 'px';
-  } else {
-    header.classList.remove('fix-header')
-      page.style.marginTop = 0;
-    }
- 
-});
-// header.contains
-header.addEventListener('click', () => {  
-
-  
-  header.classList.remove('fix-header')
-      page.style.marginTop = 0;
-});
-
 // Swiper свайпер
 var swiper = new Swiper(".offerSwiper", {
   slidesPerView: 3,
@@ -130,7 +105,8 @@ burgerclose.addEventListener('click', () => {
 
 menu.addEventListener('click', e => {
   if (!e.target.classList.contains('modal__mb_window')) {
-    menu.classList.remove('burger_active')
+    menu.classList.remove('burger_active');
+    body.classList.remove("_locked");
   }
 })
 {

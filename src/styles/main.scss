@@ -1755,9 +1755,10 @@ li {
   }
 
   &__hint {
-    background-image: url('../images/hint.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+    // background-image: url('../images/hint.png');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    background-color: $red;
     padding: 35px 15px 27px;
     width: 100%;
     max-width: 80%;
@@ -1770,6 +1771,16 @@ li {
     opacity: 0;
     visibility: hidden;
     transition: .3s linear;
+    &::after {
+      content: "";
+      position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent $red transparent;
+    }
 
     @media (max-width: $r_desk_1040) {
       padding: 25px 0px 15px;

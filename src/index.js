@@ -3,7 +3,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './styles/main.scss';
-// import $ from 'jquery';
+import $ from 'jquery';
 import './js/croll.js';
 import './js/fix-header.js';
 import './js/select.js';

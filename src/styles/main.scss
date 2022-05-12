@@ -2250,7 +2250,7 @@ Select c dropdown на JS
     background: #DDD;
     padding-top: 7px;
     scrollbar-width: none;
-    overflow-y: scroll;
+    overflow: auto;
     max-height: 140px;
     &::-webkit-scrollbar {
       width: 0px;

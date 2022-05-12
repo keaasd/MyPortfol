@@ -1,4 +1,4 @@
-import './js/preloader.js';
+// import './js/preloader.js';
 import 'normalize.css'
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -91,38 +91,44 @@ var swiper = new Swiper(".trandsSwiper", {
 let burger = document.querySelector('.burger-btn__open');
 let menu = document.querySelector('.modal__mb');
 let burgerclose = document.querySelector('.burger-btn__close');
+const headerMb = document.querySelector('.header');
 const body = document.body;
 
 if (burger && menu) {
   burger.onclick = () => {
     menu.classList.toggle('burger_active')
     body.classList.add("_locked");
+    headerMb.classList.add("dropdown__input-hidden"); 
   }
 }
 burgerclose.addEventListener('click', () => {
   menu.classList.remove('burger_active')
   body.classList.remove("_locked");
+  headerMb.classList.remove("dropdown__input-hidden"); 
 });
 
 menu.addEventListener('click', e => {
   if (!e.target.classList.contains('modal__mb_window')) {
     menu.classList.remove('burger_active');
     body.classList.remove("_locked");
+    headerMb.classList.remove("dropdown__input-hidden"); 
   }
 })
-{
+
   const modalBtns =    document.querySelectorAll('._modal-open'); 
   const modals =      document.querySelectorAll('._modal'); 
-  const body = document.body; 
+  // const body = document.body; 
   function openModal(elem) {
     elem.classList.add('_active');
     body.classList.add('_locked')
+    headerMb.classList.add("dropdown__input-hidden"); 
   } function closeModal(e) {
     if
       (e.target.classList.contains('modal-close') ||
       e.target.closest('.modal-close') || e.target.classList.contains('modal-bg')) {
       e.target.closest('._modal').classList.remove('_active');
       body.classList.remove('_locked')
+      headerMb.classList.remove("dropdown__input-hidden"); 
     }
   } modalBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -142,7 +148,7 @@ menu.addEventListener('click', e => {
         modal.classList.contains('_active')) {
         modal.classList.remove('_active');
         body.classList.remove('_locked');
+        headerMb.classList.remove("dropdown__input-hidden"); 
       }
     })
   })
-}

@@ -8,7 +8,7 @@ $red: #D40000;
 $gray: #E8E8E7;
 $border: 1px solid #010101;
 $font-inter: "Inter",
-serif;
+  serif;
 
 $bla1: rgb(35, 35, 38);
 $bla2: rgb(20, 20, 22);
@@ -58,9 +58,11 @@ $r_desk_1360: 1360px;
 h1 {
   font-size: var(--text-size-mini);
 }
+
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
+
 body {
   font-size: 62.5%;
   /* 16px*0.62.5% = 10px */
@@ -155,7 +157,8 @@ li {
   justify-content: space-between;
   padding-left: 0;
   list-style: none;
-  gap: 7.7%;
+  // gap: 7.7%;
+  gap: 1.5vw;
 
   @media (max-width: $r_desk_1040) {
     gap: 2.7vw;
@@ -353,12 +356,14 @@ li {
 
 
 }
+
 .btn_up {
   position: fixed;
   right: 30px;
   bottom: 30px;
   background: transparent;
 }
+
 .nav_mail {
   position: relative;
 
@@ -853,16 +858,18 @@ li {
     display: flex;
     // padding: 20px;
   }
+
   &-body {
     padding: 55px 20px 40px;
     background-color: $white-g;
     width: 100%;
     max-height: 90%;
-    overflow: auto;
+    // overflow: auto;
     position: relative;
     margin: auto;
     max-width: 600px;
     scrollbar-width: none;
+
     &::-webkit-scrollbar {
       width: 0;
     }
@@ -877,6 +884,7 @@ li {
     top: 20px;
     right: 20px;
     cursor: pointer;
+
     & svg {
       fill: $bla1;
     }
@@ -937,7 +945,6 @@ li {
     cursor: pointer;
     transition: 0.3s ease-out;
     padding: 0 20px 24px;
-    // display: none;
 
     @media (max-width: $r_mob_567) {
       padding-bottom: 20px;
@@ -1603,7 +1610,7 @@ li {
 }
 
 .seo {
-  margin-top: var(--margin-l);
+  padding-top: var(--margin-l);
   padding-bottom: var(--margin-m);
   border-bottom: $border;
 
@@ -1771,15 +1778,17 @@ li {
     opacity: 0;
     visibility: hidden;
     transition: .3s linear;
+
     &::after {
       content: "";
       position: absolute;
-    bottom: 100%;  /* At the top of the tooltip */
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent $red transparent;
+      bottom: 100%;
+      /* At the top of the tooltip */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent $red transparent;
     }
 
     @media (max-width: $r_desk_1040) {
@@ -2228,16 +2237,24 @@ Select c dropdown на JS
     position: absolute;
     left: 0;
     top: 52px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
     width: 100%;
-    background: #DDD;
-    padding-top: 7px;
     visibility: hidden;
     opacity: 0;
     z-index: 1;
     transition: .3s linear;
+  }
+
+  &__wrap {
+    margin: 0;
+    padding: 0;
+    // background: #DDD;
+    padding-top: 7px;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    max-height: 140px;
+    &::-webkit-scrollbar {
+      width: 0px;
+      }
   }
 
   &__list-item {
@@ -2326,12 +2343,13 @@ Select c dropdown на JS
 
 .checkbox:checked+label:after {
   right: 17px;
-} 
+}
+
 .to-up {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  opacity: 0;  
+  opacity: 0;
   background: $gr1;
   color: $white;
   padding: 10px;
@@ -2340,17 +2358,21 @@ Select c dropdown на JS
   z-index: 5;
   transform: scale(1);
   transition: .3s linear;
+
   .black_th &:hover {
     text-decoration: none;
     transform: scale(1.2);
   }
 }
+
 .visible {
-  opacity: .7;  
+  opacity: .7;
 }
+
 .scroll-height {
   scroll-margin-top: 80px;
 }
+
 .example-overlay {
   position: fixed;
   top: 50%;
@@ -2359,11 +2381,12 @@ Select c dropdown на JS
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0, 0, 0, .5);
   width: 100%;
   opacity: 0;
   height: 100vh;
 }
+
 // =============
 .black_th {
 
@@ -2427,7 +2450,8 @@ Select c dropdown на JS
   & .portfolio__item,
   & .seo,
   & .landing-page,
-  & .your-project__wrap, & .modal-callback__line {
+  & .your-project__wrap,
+  & .modal-callback__line {
     border-bottom: 1px solid #F3F2F0;
 
   }
@@ -2492,6 +2516,7 @@ Select c dropdown на JS
     border-top: 1px solid rgba(243, 242, 240, .2);
 
   }
+
   & .modal-close svg {
     fill: $white;
   }
@@ -2520,18 +2545,24 @@ Select c dropdown на JS
   & .advantage__image svg {
     fill: white;
   }
-  
-& .modal-body {
-background-color: $bla1;
-}
-& .modal__user, & .dropdown__button, & .modal__form_item, & .dropdown__list {
-  background-color: $gr1;
 
-}
-& .burger-btn__close {
-  background-image: url(../images/close_bl.svg);
-}
-& .landing-page__item::before {
-  background-color: $white;
-}
+  & .modal-body {
+    background-color: $bla1;
+  }
+
+  & .modal__user,
+  & .dropdown__button,
+  & .modal__form_item,
+  & .dropdown__list {
+    background-color: $gr1;
+
+  }
+
+  & .burger-btn__close {
+    background-image: url(../images/close_bl.svg);
+  }
+
+  & .landing-page__item::before {
+    background-color: $white;
+  }
 }

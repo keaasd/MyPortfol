@@ -2247,7 +2247,7 @@ Select c dropdown на JS
   &__wrap {
     margin: 0;
     padding: 0;
-    // background: #DDD;
+    background: #DDD;
     padding-top: 7px;
     scrollbar-width: none;
     overflow-y: scroll;
@@ -2260,7 +2260,7 @@ Select c dropdown на JS
   &__list-item {
     margin: 0;
     padding: 0;
-    // background: #dddddc;
+    background: #dddddc;
     color: rgba($black, 0.4);
     padding: 13px 20px;
     cursor: pointer;
@@ -2398,7 +2398,8 @@ Select c dropdown на JS
 
   & input,
   & .dropdown,
-  & .dropdown__list {
+  & .dropdown__list
+  & .dropdown__wrap {
     background: $bla1;
     color: $white;
   }
@@ -2553,7 +2554,8 @@ Select c dropdown на JS
   & .modal__user,
   & .dropdown__button,
   & .modal__form_item,
-  & .dropdown__list {
+  & .dropdown__list,
+  & .dropdown__list-item {
     background-color: $gr1;
 
   }
